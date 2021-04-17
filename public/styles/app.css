@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  text-align: center;
+}
+
+button {
+  border: none;
+  width: 30pt;
+  height: 30pt;
+  font-size: 20px;
+  color: #fff;
+}
+
+#decrement {
+  background-color: #000;
+}
+
+#increment {
+  background-color: lightgreen;
+}
+
+#show-state {
+  font-size: 20px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "atiendo",
+  "version": "0.1.0",
+  "main": "bundle/index.js",
+  "description": "",
+  "scripts": {
+    "start": "node .",
+    "build": "spago bundle-app --main Server.Main --to bundle/index.js && spago bundle-app --main Client.Main --to public/scripts/app.js",
+    "test": "spago test"
+  },
+  "author": "cwd-k2",
+  "license": "MIT",
+  "dependencies": {
+    "purescript": "^0.13.8",
+    "spago": "^0.20.0"
+  }
+}

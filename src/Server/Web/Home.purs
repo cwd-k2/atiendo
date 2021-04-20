@@ -1,6 +1,6 @@
-module Server.App.Home
-  ( homeResource
-  , Home
+module Server.Web.Home
+  ( Home
+  , homeResource
   ) where
 
 import Prelude

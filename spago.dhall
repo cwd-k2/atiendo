@@ -4,7 +4,8 @@ You can edit this file as you like.
 -}
 { name = "atiendo"
 , dependencies =
-  [ "console"
+  [ "affjax"
+  , "console"
   , "effect"
   , "halogen"
   , "hyper"

@@ -5,7 +5,8 @@ body {
 
 button {
   border: none;
-  width: 30pt;
+  border-radius: 20px;
+  width: 90pt;
   height: 30pt;
   font-size: 20px;
   color: #fff;

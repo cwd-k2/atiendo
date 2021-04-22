@@ -21,8 +21,8 @@ import Halogen.HTML.Events as HE
 import Halogen.VDom.Driver (runUI)
 
 data Action
-  = Increment
-  | Decrement
+  = EraseMessage
+  | FetchMessage
 
 app :: forall q m. MonadAff m => H.Component HH.HTML q Unit Void m
 app = H.mkComponent
@@ -33,21 +33,21 @@ app = H.mkComponent
   where
     render state =
       HH.div_
-        [ HH.button [ HE.onClick $ const $ Just Decrement , HP.id_ "decrement" ]
-                    [ HH.text "decrement" ]
-        , HH.button [ HE.onClick $ const $ Just Increment , HP.id_ "increment" ]
-                    [ HH.text "increment" ]
+        [ HH.button [ HE.onClick $ const $ Just EraseMessage, HP.id_ "decrement" ]
+                    [ HH.text "erase" ]
+        , HH.button [ HE.onClick $ const $ Just FetchMessage, HP.id_ "increment" ]
+                    [ HH.text "ping!" ]
         , HH.div    [ HP.id_ "show-state" ] [ HH.text state ]
         ]
 
     handleAction = case _ of
-      Increment -> do
+      FetchMessage -> do
         result <- H.liftAff $ get json "/api/ping"
         case result of
           Left err  -> H.modify_ $ const $ printError err
           Right res -> H.modify_ $ const $ stringify res.body
 
-      Decrement -> H.modify_ $ const "..."
+      EraseMessage -> H.modify_ $ const "..."
 
 
 

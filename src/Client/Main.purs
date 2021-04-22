@@ -32,12 +32,21 @@ app = H.mkComponent
         }
   where
     render state =
-      HH.div_
-        [ HH.button [ HE.onClick $ const $ Just EraseMessage, HP.id_ "decrement" ]
-                    [ HH.text "erase" ]
-        , HH.button [ HE.onClick $ const $ Just FetchMessage, HP.id_ "increment" ]
-                    [ HH.text "ping!" ]
-        , HH.div    [ HP.id_ "show-state" ] [ HH.text state ]
+      HH.div
+        [ HP.id_ "container" ]
+        [ HH.button
+          [ HE.onClick $ const $ Just EraseMessage
+          , HP.id_ "erase-message"
+          ]
+          [ HH.text "erase" ]
+        , HH.button
+          [ HE.onClick $ const $ Just FetchMessage
+          , HP.id_ "fetch-message"
+          ]
+          [ HH.text "ping!" ]
+        , HH.div
+          [ HP.id_ "show-state" ]
+          [ HH.text state ]
         ]
 
     handleAction = case _ of

@@ -1,8 +1,3 @@
-body {
-  display: flex;
-  text-align: center;
-}
-
 button {
   border: none;
   border-radius: 20px;
@@ -12,11 +7,15 @@ button {
   color: #fff;
 }
 
-#decrement {
+#container {
+  text-align: center;
+}
+
+#erase-message {
   background-color: #000;
 }
 
-#increment {
+#fetch-message {
   background-color: lightgreen;
 }
 

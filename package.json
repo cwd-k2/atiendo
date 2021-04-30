@@ -5,12 +5,13 @@
   "description": "",
   "scripts": {
     "start": "node .",
-    "build": "spago bundle-app --main Server.Main --to bundle/index.js && spago bundle-app --main Client.Main --to public/scripts/app.js",
+    "build": "spago bundle-app --main Atiendo.Server.Main --to bundle/index.js && spago bundle-app --main Atiendo.Client.Main --to public/scripts/app.js",
     "test": "spago test"
   },
   "author": "cwd-k2",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "purescript": "^0.13.8",
     "spago": "^0.20.0"
   }

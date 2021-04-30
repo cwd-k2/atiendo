@@ -1,4 +1,4 @@
-module Client.Main where
+module Atiendo.Client.Main where
 
 import Prelude
 
@@ -57,8 +57,6 @@ app = H.mkComponent
           Right res -> H.modify_ $ const $ stringify res.body
 
       EraseMessage -> H.modify_ $ const "..."
-
-
 
 main :: Effect Unit
 main =
